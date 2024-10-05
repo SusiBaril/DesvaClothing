@@ -19,3 +19,16 @@ new Chart(ctx, {
     }
   }
 });
+
+// Get the current page URL
+const currentPage = window.location.pathname;
+
+// Get all the nav links
+const navLinks = document.querySelectorAll('.nav-link a');
+
+// Loop through the links and add 'active' to the matching one
+navLinks.forEach(link => {
+  if (link.href.includes(currentPage)) {
+    link.classList.add('active');
+  }
+});

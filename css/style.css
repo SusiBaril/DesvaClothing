@@ -53,28 +53,50 @@ body {
 }
 
 .sidebar .image-text img {
-    width: 120px;
+    width: 170px;
     display: block;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 40px;
 }
-
 
 .menu {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10rem;
 }
 
-.text, i{
-    color: var(--text-900);
-    font-size: 20px;
-    vertical-align: middle;
-}
-
-i{
-    margin-right: 10px;
-}
+.menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-link {
+    margin: 10px 0;
+  }
+  
+  .nav-link a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #8a8a8a;
+    padding: 10px;
+    transition: color 0.3s ease;
+    font-size: 30px;
+  }
+  
+  .nav-link a.active {
+    color: #ff914d;
+  }
+  
+  .nav-link a:hover {
+    color: #ff914d
+  }
+  
+  .nav-link i {
+    margin-right: 8px;
+  }
 
 .logout {
     display: flex;
@@ -84,6 +106,16 @@ i{
     bottom: 0;
     width: 100%;
     margin-bottom: 20px;
+}
+
+.logout a{
+    color: #8a8a8a;
+    font-size: 25px;
+    text-decoration: none !important;
+}
+
+.logout a:hover{
+    color: #ff914d;
 }
 
 /* home */
@@ -221,4 +253,59 @@ i{
     padding: 10px;
     border-radius: 10px;
     background-color: #ededeb;
+}
+
+/* add product */
+
+.back i{
+    font-size: 3rem;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    color: #191715;
+}
+
+.back i:hover{
+    color: #ff914d;
+}
+
+.add-img, .product-details{
+    border: 2px solid #191715;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ededeb;
+}
+
+.add-img{
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgupload{
+    height: 20rem;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.name, .price, .quantity{
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+.description{
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
 }
