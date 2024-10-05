@@ -194,3 +194,31 @@ i{
     color: var(--bg-black-100);
     margin-bottom: 0.5rem;
 }
+
+
+/* sales */
+
+.box-totalincome, .box-numofcustomer, .box-totalorders, .box-totalcustomorders{
+    border: 2px solid #191715;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ededeb;
+}
+
+.orders, .customorders{
+    border: 2px solid #191715;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ededeb;
+}
+
+/* transaction */
+.box-transactions, .box-sponsor{
+    border: 2px solid #191715;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ededeb;
+}
