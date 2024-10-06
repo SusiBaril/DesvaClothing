@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desva Clothing | Add Product</title>
+    <title>Desva Clothing | Profile Settings</title>
 
     <!-- Style -->
     <link rel="stylesheet" href="/css/style.css">
@@ -66,25 +66,25 @@
 
     <div class="main-content">
 
-      <div class="head-content">
+        <div class="head-content">
 
-        <div class="box-head">
+            <div class="box-head">
 
-            <div class="user-name">
-                <h3>Hello, Admin</h3>
-                <div class="dropdown-content">
-                  <a href="profilesettings.html">Settings</a>
-                  <a href="#">Logout</a>
+                <div class="user-name">
+                    <h3>Hello, Admin</h3>
+                    <div class="dropdown-content">
+                      <a href="profilesettings.html">Settings</a>
+                      <a href="#">Logout</a>
+                    </div>
+                  </div>
+    
+                <div class="user-img">
+                    <img src="image/example.jpg" alt="profile">
                 </div>
-              </div>
-
-            <div class="user-img">
-                <img src="image/example.jpg" alt="profile">
+    
             </div>
 
         </div>
-
-      </div>
 
         <div class="back">
 
@@ -112,48 +112,14 @@
 
                 <div class="col-md-9">
 
-                    <div class="product-details">
+                    <div class="profile-settings">
 
-                        <h3>Product Details:</h3>
+                        <h4>Name: <input type="text"></h4>
+                        <h4>Username:<input type="text"></h4>
+                        <h4>Email: <input type="email"></h4>
 
-                        <h4>Product Name: <input class="name" type="text"><span class="error">Enter Name</span></h4>
-                        <h4>Product Price: <input class="price" type="text"><span class="error">Enter Price</span></h4></h4>
-                        <h4>Product Description:</h4>
-                        <form>
-                            <textarea class="description">Some text...</textarea>
-                        </form>
-
-                        <table class="table" style="text-align: center;">
-                            <thead>
-                              <tr>
-                                <th scope="col">Size</th>
-                                <th scope="col">Quantity</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>Small</td>
-                                <td><input type="number" class="quantity" min="1" max="100" required></td>
-                              </tr>
-                              <tr>
-                                <td>Medium</td>
-                                <td><input type="number" class="quantity" min="1" max="100" required></td>
-                              </tr>
-                              <tr>
-                                <td>Large</td>
-                                <td><input type="number" class="quantity" min="1" max="100" required></td>
-                              </tr>
-                              <tr>
-                                <td>X-Large</td>
-                                <td><input type="number" class="quantity" min="1" max="100" required></td>
-                              </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="addbtn">
-
-                            <button>Add Product</button>
-
+                        <div class="editbtn">
+                            <button class="edit-profile">Edit Profile</button>
                         </div>
 
                     </div>
@@ -165,7 +131,7 @@
         </div>
 
     </div>
-    
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
