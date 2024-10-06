@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desva Clothing | Stocks</title>
+    <title>Desva Clothing | Transaction</title>
 
     <!-- Style -->
     <link rel="stylesheet" href="/css/style.css">
@@ -21,6 +21,7 @@
 <body>
 
     <nav class="sidebar">
+
         <header>
             <div class="image-text">
                 <span class="image">
@@ -60,78 +61,91 @@
             </div>
           </div>
 
-        <footer>
-            <div class="logout">
-                <a href="">
-                    <i class="bx bx-log-out"></i>
-                    <span class="text nav-text">Logout</span>
-                </a>
-            </div>
-        </footer>
-
     </nav>
 
     <div class="main-content">
 
-        <div class="head-content">
+      <div class="head-content">
 
-            <div class="box-head">
+        <div class="box-head">
 
-                <div class="user-name">
-                    <h3>Hello, Admin</h3>
-                    <div class="dropdown-content">
-                        <a href="profilesettings.html">Settings</a>
-                      <a href="#">Logout</a>
-                    </div>
-                  </div>
-    
-                <div class="user-img">
-                    <img src="image/example.jpg" alt="profile">
+            <div class="user-name">
+                <h3>Hello, Admin</h3>
+                <div class="dropdown-content">
+                  <a href="profilesettings.html">Settings</a>
+                  <a href="#">Logout</a>
                 </div>
-    
+              </div>
+
+            <div class="user-img">
+                <img src="image/example.jpg" alt="profile">
+            </div>
+
             </div>
 
         </div>
 
-        <section class="stocks">
+        <div class="container-fluid">
 
-            <div class="container-fluid">
+            <div class="row">
 
-                <div class="row">
+                <div class="col-md-3">
 
-                    <div class="col-md-12">
+                    <div class="add-img">
 
-                        <div class="add-product">
+                        <label for="file-upload">
+                            <img class="imgupload" src="image/image.png" alt="Click to upload">
+                        </label>
 
-                            <a href="addproduct.html" class="add-stock" style="text-decoration: none;"><i class="bx bx-plus plus"></i>Add Stock</a>
-
-                        </div>
+                        <input id="file-upload" type="file" accept="image/*">
 
                     </div>
 
-                    <div class="col-md-12">
+                </div>
 
-                        <div class="box-stock">
+                <div class="col-md-9">
 
-                            <div class="card-container my-5">
+                    <div class="product-details">
 
-                                <div class="card" style="border-radius: 10px;">
+                        <h3>Product Details:</h3>
 
-                                    <div class="card-body">
+                        <h4>Product Name: <span>Desva Tshirt</span> </h4>
+                        <h4>Product Price: <span>250.00</span> </h4>
+                        <h4>Product Description:</h4>
+                        <form>
+                            <textarea class="description">Some text...</textarea>
+                        </form>
 
-                                        <img src="image/example.jpg" alt="">
+                        <table class="table" style="text-align: center;">
+                            <thead>
+                              <tr>
+                                <th scope="col">Size</th>
+                                <th scope="col">Quantity</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Small</td>
+                                <td><input type="number" class="quantity" min="1" max="100" required></td>
+                              </tr>
+                              <tr>
+                                <td>Medium</td>
+                                <td><input type="number" class="quantity" min="1" max="100" required></td>
+                              </tr>
+                              <tr>
+                                <td>Large</td>
+                                <td><input type="number" class="quantity" min="1" max="100" required></td>
+                              </tr>
+                              <tr>
+                                <td>X-Large</td>
+                                <td><input type="number" class="quantity" min="1" max="100" required></td>
+                              </tr>
+                            </tbody>
+                        </table>
 
-                                        <h4 class="card-title">Desva Clothing</h4>
-                                        <h4 class="card-text">Stock: 69</h4>
+                        <div class="addbtn">
 
-                                        <a href="viewproduct.html" class="view-product">View Product</a>
-
-                                    </div>
-
-                                </div>
-                                
-
-                            </div>
+                            <button>Save</button>
 
                         </div>
 
@@ -141,7 +155,7 @@
 
             </div>
 
-        </section>
+        </div>
 
     </div>
 
