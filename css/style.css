@@ -5,13 +5,14 @@
     --text-900:#ff914d;
     --bg-900:#191715;
     --bg-bg-900:#ededeb;
+    --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* heading */
 .head-content{
-    border: 2px solid #191715;
-    margin-bottom: 50px;
-    background-color: #ededeb;
+    margin-bottom: 10px;
+    background: #ffffff;
+    box-shadow: var(--box-shadow);
 }
 
 .user-img img{
@@ -24,8 +25,8 @@
 .box-head{
     display: flex;
     align-items: center;
-    justify-content: end;
-    margin: 10px;
+    justify-content: flex-end;
+    padding: 10px 20px; 
 }
 
 .user-name {
@@ -62,8 +63,9 @@
 /* dashboard */
 body {
     height: 100vh;
-    background: #c9c9c6 !important;
     font-family: "Fredoka", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Sidebar */
@@ -76,7 +78,6 @@ body {
     width: 350px;
     background-color: var(--bg-900);
     font-family: "Fredoka", sans-serif;
-    position: fixed;
 }
 
 .sidebar .image-text img {
@@ -148,16 +149,19 @@ body {
 /* home */
 
 .main-content{
+    top: 0;
+    left: 0;
+    height: 100%;
     padding-left: 350px;
     font-family: "Fredoka", sans-serif;
 }
 
 .box-sales, .box-transaction, .box-stocks{
-    border: 2px solid #191715;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
     background-color: #ededeb;
+    box-shadow: var(--box-shadow);
 }
 
 .top-layer h1{
@@ -165,20 +169,20 @@ body {
 }
 
 .linechart{
-    border: 2px solid #191715;
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
-    background-color: #ededeb;
+    background-color: #ffffff;
+    box-shadow: var(--box-shadow);
 }
 
 .last-transaction{
     margin: 10px;
-    border: 2px solid #191715;
     border-radius: 10px;
     padding: 10px;
     height: 37rem;
     background-color: #ededeb;
+    box-shadow: var(--box-shadow);
 }
 
 .last-transaction h1{
@@ -191,7 +195,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: end;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .add-stock{
@@ -202,13 +206,14 @@ body {
     background-color: #191715;
     padding: 10px;
     border-radius: 50px;
+    box-shadow: var(--box-shadow);
 }
 
 .box-stock{
     height: 50rem;
-    border: 2px solid #191715;
-    background: #ededeb;
+    background: #E0E2DB;
     border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
 .add-stock:hover{
@@ -217,7 +222,7 @@ body {
 
 .card {
     max-width: 15rem;
-    border: 1px solid #ddd;
+    box-shadow: var(--box-shadow);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -230,12 +235,12 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 .card img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 200px;
+    max-height: 200px;
     margin-bottom: 10px;
 }
 
@@ -254,19 +259,29 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.card-body a{
+    color: #191715;
+}
+
+.card-body a:hover{
+    color: #191715;
+}
+
 
 /* sales */
 
 .box-totalincome, .box-numofcustomer, .box-totalorders, .box-totalcustomorders{
-    border: 2px solid #191715;
+    box-shadow: var(--box-shadow);
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
     background-color: #ededeb;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .orders, .customorders{
-    border: 2px solid #191715;
+    box-shadow: var(--box-shadow);
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -275,11 +290,12 @@ body {
 
 /* transaction */
 .box-transactions, .box-sponsor{
-    border: 2px solid #191715;
+    box-shadow: var(--box-shadow);
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
     background-color: #ededeb;
+    margin-top: 25px;
 }
 
 /* add product */
@@ -383,4 +399,21 @@ input[type="file"] {
     background-color: #191715;
     padding: 10px;
     border-radius: 50px;
+}
+
+/* Icon and Text Head */
+
+h3 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+/* Design */
+.box-sales, .box-stocks{
+    background-color: #E6AF2E;
+}
+
+.box-transaction{
+    background-color: #E0E2DB;
 }
