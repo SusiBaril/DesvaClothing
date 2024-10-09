@@ -6,8 +6,10 @@
     --bg-900:#191715;
     --bg-bg-900:#ededeb;
     --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --box-shadow-gold:box-shadow: 0 4px 8px 0 rgba(230, 175, 46, 0.2), 0 6px 20px 0 rgba(230, 175, 46, 0.19);
+    --yellow:#E6AF2E;
+    --black:#1A181B;
 }
-
 /* heading */
 .head-content{
     margin-bottom: 10px;
