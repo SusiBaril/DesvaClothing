@@ -32,19 +32,3 @@ navLinks.forEach(link => {
     link.classList.add('active');
   }
 });
-
-// dropdown
-document.querySelector('.user-name').addEventListener('click', function() {
-  const dropdown = document.querySelector('.dropdown-content');
-  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-});
-
-// Optional: Close the dropdown if clicked outside
-window.addEventListener('click', function(e) {
-  if (!e.target.matches('.user-name h3')) {
-    const dropdown = document.querySelector('.dropdown-content');
-    if (dropdown.style.display === 'block') {
-      dropdown.style.display = 'none';
-    }
-  }
-});

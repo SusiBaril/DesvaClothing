@@ -42,8 +42,14 @@
                 </li>
                 <li class="nav-link">
                   <a href="stock.html" style="text-decoration: none;">
-                    <i class="bx bx-box"></i>
+                    <i class='bx bx-closet'></i>
                     <span class="text nav-text">Stock</span>
+                  </a>
+                </li>
+                <li class="nav-link">
+                  <a href="order.html" style="text-decoration: none;">
+                    <i class="bx bx-clipboard"></i>
+                    <span class="text nav-text">Orders</span>
                   </a>
                 </li>
                 <li class="nav-link">
@@ -54,12 +60,26 @@
                 </li>
                 <li class="nav-link">
                   <a href="transaction.html" style="text-decoration: none;">
-                    <i class="bx bx-clipboard"></i>
+                    <i class='bx bx-analyse'></i>
                     <span class="text nav-text">Transaction</span>
                   </a>
                 </li>
               </ul>
             </div>
+          </div>
+
+          <div class="logout">
+
+            <ul class="bottom-menu">
+              <li>
+                <a href="profilesettings.html"><i class='bx bx-cog' ></i>Settings</a>
+              </li>
+              <li>
+                <a href=""><i class='bx bx-log-out' ></i>Logout</a>
+              </li>
+            </ul>
+            
+
           </div>
 
     </nav>
@@ -72,10 +92,6 @@
 
             <div class="user-name">
                 <h3>Hello, Admin</h3>
-                <div class="dropdown-content">
-                  <a href="profilesettings.html">Settings</a>
-                  <a href="#">Logout</a>
-                </div>
               </div>
 
             <div class="user-img">
@@ -88,76 +104,146 @@
 
         <section class="home">
 
-            <div class="top-layer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="box-sales">
-                                <h3><i class='bx bx-dollar'></i>Total Sales</h3>
-                                <h1>100</h1>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="box-transaction">
-                                <h3><i class='bx bx-coin-stack' ></i>Total Transaction</h3>
-                                <h1>100</h1>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="box-stocks">
-                                <h3><i class='bx bx-box'></i>On Stocks</h3>
-                                <h1>100</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="container-fluid">
 
-            <div class="analytics">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="linechart">
-                                <canvas id="linechart"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="last-transaction">
-                                <h1>Last Transaction</h1>
-                                <table class="table" style="text-align: center;">
-                                    <thead>
-                                      <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Username</th>
-                                        <th scope="col">Item</th>
-                                        <th scope="col">Price</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                      </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+              <div class="row">
+
+                <div class="col-md-3">
+
+                  <div class="total-sales">
+
+                    <h3>Total Sales</h3>
+                    <h1>₱ 100</h1>
+
+                  </div>
+
                 </div>
+
+                <div class="col-md-3">
+
+                  <div class="total-transaction">
+
+                    <h3>Total Transaction</h3>
+                    <h1>200</h1>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                  <div class="total-orders">
+
+                    <h3>Total Orders</h3>
+                    <h1>100</h1>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                  <div class="total-pending-orders">
+
+                    <h3>Total Pending Orders</h3>
+                    <h1>50</h1>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-6">
+
+                  <div class="sale-chart">
+
+                    <h3>Total Sales per Month</h3>
+
+                    <canvas id="linechart"></canvas>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                  <div class="low-stocks">
+
+                    <h3>Low Stocks</h3>
+
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Order Id</th>
+                          <th>Product</th>
+                          <th>Total Stock</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Desva Tshirt</td>
+                          <td>12</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Desva Jacket</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Tallado</td>
+                          <td>5</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                  <div class="top-product">
+
+                    <h3>Top Product</h3>
+
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Order Id</th>
+                          <th>Product</th>
+                          <th>Total Stock</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Desva Tshirt</td>
+                          <td>12</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Desva Jacket</td>
+                          <td>10</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Tallado</td>
+                          <td>5</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
     
         </section>

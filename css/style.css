@@ -9,6 +9,7 @@
     --box-shadow-gold:box-shadow: 0 4px 8px 0 rgba(230, 175, 46, 0.2), 0 6px 20px 0 rgba(230, 175, 46, 0.19);
     --yellow:#E6AF2E;
     --black:#1A181B;
+    --white:#FFFFFC;
 }
 /* heading */
 .head-content{
@@ -77,7 +78,7 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 350px;
+    width: 300px;
     background-color: var(--bg-900);
     font-family: "Fredoka", sans-serif;
 }
@@ -93,7 +94,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10rem;
 }
 
 .menu-links {
@@ -102,18 +102,14 @@ body {
     margin: 0;
   }
   
-  .nav-link {
-    margin: 10px 0;
-  }
-  
   .nav-link a {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #8a8a8a;
-    padding: 10px;
+    padding: 5px;
     transition: color 0.3s ease;
-    font-size: 30px;
+    font-size: 20px;
   }
   
   .nav-link a.active {
@@ -128,6 +124,12 @@ body {
     margin-right: 8px;
   }
 
+.bottom-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .logout {
     display: flex;
     align-items: center;
@@ -140,8 +142,12 @@ body {
 
 .logout a{
     color: #8a8a8a;
-    font-size: 25px;
+    font-size: 20px;
     text-decoration: none !important;
+}
+
+.logout i{
+    margin-right: 8px;
 }
 
 .logout a:hover{
@@ -154,40 +160,43 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    padding-left: 350px;
+    padding-left: 300px;
     font-family: "Fredoka", sans-serif;
 }
 
-.box-sales, .box-transaction, .box-stocks{
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #ededeb;
-    box-shadow: var(--box-shadow);
-}
-
-.top-layer h1{
-    font-size: 5rem;
-}
-
-.linechart{
+.total-sales, .total-orders{
+    background-color: var(--yellow);
     padding: 20px;
+    margin-top: 10px;
     border-radius: 10px;
-    margin: 10px;
-    background-color: #ffffff;
     box-shadow: var(--box-shadow);
 }
 
-.last-transaction{
-    margin: 10px;
+.total-transaction,.total-pending-orders{
+    background-color: var(#FFFFFC);
+    padding: 20px;
+    margin-top: 10px;
     border-radius: 10px;
-    padding: 10px;
-    height: 37rem;
-    background-color: #ededeb;
     box-shadow: var(--box-shadow);
 }
 
-.last-transaction h1{
+.sale-chart, .low-stocks, .top-product{
+    background-color: var(#FFFFFC);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.low-stocks, .top-product{
+    height: 28.1rem;
+}
+
+.low-stocks table{
+    text-align: center;
+}
+
+.top-product table{
     text-align: center;
 }
 
