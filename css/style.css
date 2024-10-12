@@ -508,7 +508,7 @@ h3 {
     background: none;
   }
 
-  .print-container{
+  .print-container, .waybill-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -528,4 +528,9 @@ h3 {
   .print-btn a:hover{
     color: var(--bg-900);
     text-decoration: none;
+  }
+
+  .order-table h4{
+    text-align: center;
+    font-size: 30px;
   }
