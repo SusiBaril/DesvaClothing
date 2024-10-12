@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desva Clothing</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.css">
+
+    <!-- Boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+     <!-- Sweet Alert -->
+     <link rel="stylesheet" href="./package/dist/sweetalert2.css">
+
+</head>
+<body>
+
+    <!-- navbar -->
+
+    <nav>   
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <div class="menu">
+
+                        <li><a href="/User/index.html">HOME</a></li>
+                        <li><a href="/User/shop.html">SHOPS</a></li>
+                        <li><a href="#">SERVICES</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="logo">
+                        <h1><a href="">Desva Clothing</a></h1>
+                    </div>
+
+                </div>
+                
+                <div class="col-md-4">
+
+                    <div class="nav-icon">
+                        <li><a href="login.html">LOGIN</a></li>
+                        <li><a href=""><i class='bx bx-search'></i></a></li>
+                        <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section class="view-product">
+
+        <div class="main-content">
+
+            <div class="back">
+
+                <a href="/User/shop.html"><i class='bx bx-left-arrow-alt'></i></a>
+      
+            </div>
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <!-- Product Image -->
+
+                        <div class="product-image">
+
+                            <div class="main-img-container">
+
+                                <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">&#10094;</a>
+
+                            <!-- Full-width images with number text -->
+                            <div class="mySlides">
+                                <div class="numbertext">1 / 4</div>
+                                <img src="/image/example.jpg" style="width:100%">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">2 / 4</div>
+                                <img src="/image/example.jpg" style="width:100%">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">3 / 4</div>
+                                <img src="/image/example.jpg" style="width:100%">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">4 / 4</div>
+                                <img src="/image/example.jpg" style="width:100%">
+                            </div>
+
+                                <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">&#10095;</a>
+                            </div>
+
+                            <!-- Thumbnail images -->
+                            <div class="row">
+                                <div class="column">
+                                <img class="demo cursor" src="/image/example.jpg" style="width:100%" onclick="currentSlide(1)">
+                                </div>
+                                <div class="column">
+                                <img class="demo cursor" src="/image/example.jpg" style="width:100%" onclick="currentSlide(2)">
+                                </div>
+                                <div class="column">
+                                <img class="demo cursor" src="/image/example.jpg" style="width:100%" onclick="currentSlide(3)">
+                                </div>
+                                <div class="column">
+                                <img class="demo cursor" src="/image/example.jpg" style="width:100%" onclick="currentSlide(4)">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Product Details -->
+
+                    <div class="col-md-6">
+
+                        <div class="product-detail">
+
+                            <div class="product-info">
+                                <div class="details">
+                                    <h4 class="details-title">Desva Tshirt</h4>
+                                    <h4 class="details-price">₱250.00</h4>
+                                </div>
+                                <div class="details-selection">
+                                    <h4>Size: </h4>
+                                    <div class="dropdown">
+                                        <select class="dropdown-toggle">
+                                            <option value="">Select Option</option>
+                                            <option value="Small">Small</option>
+                                            <option value="Medium">Medium</option>
+                                            <option value="Large">Large</option>
+                                            <option value="X-Large">X-Large</option>
+                                        </select>
+                                    </div>
+                                    <h4>Quantity: </h4>
+                                    <div class="dropdown">
+                                        <select class="dropdown-toggle">
+                                            <option value="">Select Option</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart-btn">
+                                    <input type="submit" value="Add to Cart">
+                                </div>
+                            </div>
+
+                            <!-- if sold out -->
+
+                            <!-- <div class="notify-me">
+
+                                <h3>Notify me when this product is available:</h3>
+                                <h3 class="email-container">
+                                    <i class='bx bx-envelope'></i>
+                                    <input type="email" placeholder="email@website.com">
+                                    <button type="submit" class="submit-button">
+                                        <i class='bx bx-chevron-right'></i>
+                                    </button>
+                                </h3>
+
+                            </div> -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+       <!-- footer -->
+
+       <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <h4><a href="">About Us</a></h4>
+              <p>Desva Clothing is a Local Filipino Brand that offers quality and affordable shirts that also provide comfortable textiles for customers to enjoy!
+
+                Desva came from the word Underdogs to which applies to being underrated of many filipino brands with Desva Clothing is no exception!</p>
+            </div>
+            <div class="col-md-4">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4>Follow Us</h4>
+              <ul>
+                <li><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                <li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                <li><a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+          <p class="copyright">Copyright &copy; 2024 Desva Clothing. All rights reserved.</p>
+        </div>
+      </footer>
+
+</body>
+
+<script src="/User/js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/adapters/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html> 

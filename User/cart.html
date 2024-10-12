@@ -63,80 +63,50 @@
 
     </nav>
 
-    <div class="main-content">
+    <section class="my-cart">
 
-        <div class="container-fluid">
+        <div class="cart">
 
-            <div class="img-banner">
-
-                <img src="/image/DesvaBanner.png" alt="">
-
-            </div>
-
-            <div class="products">
-
-                <div class="card-container  my-5">
-
-                    <div class="card" style="border-radius: 10px; position: relative;">
-
-                        <div class="card-body">
-
-                            <img src="/image/example.jpg" alt="">
-
-                            <div class="card-title">
-
-                                <h4>Desva Tshirt</h4>
-                                <h4>₱250.00</h4>
-
-                            </div>
-
-                            <a href="/User/viewproduct.html" class="card-text quick-view-btn" style="text-decoration: none;">View Product</a>
-
-                        </div>
-
-                    </div>
-                    
-                    
+            <div class="cart-item">
+                <img src="/image/example.jpg" alt="Black Hoodie" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h4 class="cart-item-title">Black Hoodie</h4>
+                    <p class="cart-item-quantity">1x</p>
+                    <p class="cart-item-size">Small</p>
+                    <p class="cart-item-price">₱432</p>
                 </div>
-
+                <div class="cart-item-remove">
+                    <input type="checkbox" class="remove-checkbox" id="remove-item">
+                    <input type="submit" class="delete-btn" value="Delete">
+                </div>
             </div>
 
         </div>
 
-    </div>
+        <div class="checkout-container">
 
+            <div class="checkout">
 
-    <!-- footer -->
-
-    <footer class="footer">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-4">
-              <h4><a href="">About Us</a></h4>
-              <p>Desva Clothing is a Local Filipino Brand that offers quality and affordable shirts that also provide comfortable textiles for customers to enjoy!
-
-                Desva came from the word Underdogs to which applies to being underrated of many filipino brands with Desva Clothing is no exception!</p>
+                <div class="checkout-left">
+    
+                    <input type="checkbox" class="selectAll-checkbox" id="select-all">
+                    <label for="slect-all">Selected Item (100)</label>
+    
+                </div>
+    
+                <div class="checkout-right">
+    
+                    <h3>Total Amount (Item 0): ₱100.00</h3>
+                    <a href="checkout.html" class="checkout-btn" style="text-decoration: none;">Check out</a>
+    
+                </div>
+    
             </div>
-            <div class="col-md-4">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <h4>Follow Us</h4>
-              <ul>
-                <li><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
-              </ul>
-            </div>
-          </div>
-          <p class="copyright">Copyright &copy; 2024 Desva Clothing. All rights reserved.</p>
+            
         </div>
-      </footer>
+
+    </section>
+
 
 </body>
 
@@ -150,4 +120,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-</html>
+</html> 

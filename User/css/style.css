@@ -296,66 +296,136 @@ section{
     padding: 10px;
 }
 
-.product-detail-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+/* Hide the images by default */
+.mySlides {
+    display: none;
 }
 
-.product-detail {
-    border: 2px solid #191715;
-    width: 80rem;
-    margin-bottom: 20px;
-}
-
-.close-btn{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-
-.close-btn i{
-    font-size: 2.5rem;
-    margin: 10px;
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
     cursor: pointer;
 }
 
-.product-detail-parts{
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.main-img-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
+    width: 40rem;
 }
 
-.product-image img{
-    width: 400px;
-    margin: 10px;
+/* Positioning for next and previous buttons */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-.product-info {
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+/* Make the row container display flex */
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Column styles */
+.column {
+    flex: 1;
+    max-width: 75px; /* Adjusted from 100px to 75px based on context */
+    margin: 0 5px;
+}
+
+.column img {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.column img:hover {
+    opacity: 0.7;
+}
+
+/* Add a transparency effect for thumbnail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+/* Product image container */
+.product-image {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 30rem;
+    max-width: 30rem;
+    position: relative;
+    margin-top: 70px;
+    margin-left: 25rem;
+}
+
+/* Style for images */
+.mySlides img {
+    width: 100%;
+    height: auto;
+}
+
+/* Hover effect for buttons */
+.prev:hover, 
+.next:hover {
+    color: var(--yellow);
+}
+
+/* Product detail styling */
+.product-detail {
+    margin-top: 70px;
 }
 
 .details-title{
-    font-size: 40px;
-    margin: 10px;
-}
-
-.details{
-    margin-left: 70px;
-}
-
-.details-price{
-    font-size: 20px;
-    margin-left: 10px;
-    margin-bottom: 20px;
+    font-size: 3rem
 }
 
 .add-to-cart-btn{
-    margin: 20px;
+    margin-top: 20px
 }
 
 .add-to-cart-btn input{
@@ -367,36 +437,15 @@ section{
     color: #ffffff;
 }
 
-.product-detail-wrapper {
-    position: relative; /* Keeps the product detail relative to the card */
-    display: flex;
-    justify-content: center; /* Centers the content */
-    margin-top: 20px;
-    width: 100%; /* Ensures the wrapper takes full width */
-}
-
-.product-detail {
-    position: absolute;
-    top: 100%; /* Puts it directly below the card */
-    left: 50%; /* Horizontally centers relative to the wrapper */
-    transform: translateX(-50%); /* Centers the product details horizontally */
-    width: 60rem; /* Adjust width as needed */
-    z-index: 10;
-    background-color: white;
-    border: 2px solid #191715;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none; /* Hidden by default */
-}
-
-.card {
-    position: relative; /* Makes the product detail relative to the card */
+.details-selection h4{
+    margin-top: 5px;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
     border: 2px solid #191715;
+    margin-top: 5px;
 }
 
 .dropdown-toggle {
@@ -443,3 +492,334 @@ section{
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
+.notify-me{
+    margin-top: 10px;
+}
+
+.notify-me input{
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid #191715;
+    text-align: center;
+}
+
+.email-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and input field */
+}
+
+.email-container i {
+    font-size: 1.5rem; /* Adjust icon size */
+}
+
+.email-container input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; /* Icon size */
+}
+
+.submit-button i {
+    color: #333; /* Customize the icon color */
+}
+
+.submit-button:hover i {
+    color: #000; /* Change icon color on hover */
+}
+
+.view-product{
+    margin-bottom: 20rem;
+}
+
+.back{
+    font-size: 2.5rem;
+    margin: 20px;
+}
+
+.back a{
+    color: var(--bg-900);
+    text-decoration: none;
+}
+
+.back a:hover{
+    color: var(--yellow);
+}
+
+.cart-item {
+    display: flex; 
+    align-items: center;
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    width: 70rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.cart-item-image {
+    width: 100px;
+    height: auto; 
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.cart-item-quantity,
+.cart-item-size,
+.cart-item-price {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.cart-item-remove {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.remove-checkbox {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.delete-btn{
+    margin-top: 20px;
+    border: none;
+    background: none;
+}
+
+.delete-btn:hover{
+    color: var(--yellow);
+}
+
+.checkout-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkout{
+    border: 1px solid #000;
+    width: 1120px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+}
+
+.checkout-left {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    width: 10rem;
+}
+
+.checkout-left input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.checkout-left label {
+    font-size: 16px;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.checkout-right{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.checkout-right h3{
+    vertical-align: middle;
+    margin: 0;
+}
+
+.checkout-right input{
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.checkout-btn{
+    background: none;
+    font-family: "Roboto Condensed", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding: 5px;
+    margin-left: 5px;
+    color: #000;
+}
+
+.checkout-btn:hover{
+    background: #000;
+    color: var(--bg-bg-900);
+    box-shadow: var(--box-shadow);
+}
+
+.checkout-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.checkout-card .cart-price p{
+    font-size: 25px;
+    color: #000;
+}
+
+.delivery-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delivery-form{
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    width: 70rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.edit-btn{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    border-bottom: 2px solid #000;
+}
+
+.edit-btn a{
+    font-size: 25px;
+    color: #000;
+}
+
+.edit-btn a:hover{
+    color: var(--yellow);
+}
+
+.payment-form{
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    width: 70rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between buttons */
+    margin-top: 15px;
+}
+
+.payment-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.payment-button i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 24px; /* Icon size */
+}
+
+.place-order{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.place-order input{
+    background: none;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.place-order input:hover{
+    background: #000;
+    color: var(--bg-bg-900);
+    box-shadow: var(--box-shadow);
+}
+
+form {
+    max-width: 1120px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style the form labels and inputs */
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"], select {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  /* Add some space between form fields */
+  br {
+    margin-bottom: 20px;
+  }
+
+  /* Style the submit button */
+  input[type="submit"] {
+    background: none;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #000;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #000;
+    color: var(--bg-bg-900);
+  }

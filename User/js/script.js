@@ -1,20 +1,34 @@
-document.querySelectorAll('.quick-view-btn').forEach(function(btn) {
-    btn.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
+let slideIndex = 1;
+showSlides(slideIndex);
 
-        // Close any currently open product detail
-        document.querySelectorAll('.product-detail').forEach(function(detail) {
-            detail.style.display = 'none';
-        });
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-        // Open the product detail of the clicked card
-        var productDetail = this.parentNode.querySelector('.product-detail');
-        productDetail.style.display = 'block'; // Show the product details
-    });
-});
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-document.querySelectorAll('.close-btn').forEach(function(closeBtn) {
-    closeBtn.addEventListener('click', function() {
-        this.closest('.product-detail').style.display = 'none'; // Close the details
-    });
-});
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+function goToShop() {
+    window.location.href = 'shop.html'; // Change to your shop page URL
+}
