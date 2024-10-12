@@ -95,10 +95,8 @@
                 </div>
     
                 <div class="checkout-right">
-    
                     <h3>Total Amount (Item 0): ₱0.00</h3>
-                    <a href="checkout.html" class="checkout-btn" style="text-decoration: none;">Check out</a>
-    
+                    <a href="checkout.html" class="checkout-btn" style="text-decoration: none;" disabled>Check out</a>
                 </div>
     
             </div>
@@ -112,7 +110,7 @@
 
 <script>
 
-    // Get all checkboxes with class 'select-checkbox'
+// Get all checkboxes with class 'select-checkbox'
 const checkboxes = document.querySelectorAll('.select-checkbox');
 console.log('Checkboxes:', checkboxes);
 
@@ -124,20 +122,41 @@ console.log('Select all checkbox:', selectAllCheckbox);
 const selectedItemLabel = document.querySelector('#selected-item-label');
 console.log('Selected item label:', selectedItemLabel);
 
-// Initialize the count of selected items
-let selectedCount = 0;
+// Get the checkout button
+const checkoutButton = document.querySelector('.checkout-btn');
+console.log('Checkout button:', checkoutButton);
 
-// Function to update the selected item count
+// Get the total amount label
+const totalAmountLabel = document.querySelector('h3'); // Assuming the total amount is in the first <h3> element
+console.log('Total amount label:', totalAmountLabel);
+
+// Initialize the count of selected items and total amount
+let selectedCount = 0;
+let totalAmount = 0;
+
+// Function to update the selected item count and total amount
 function updateSelectedCount() {
-  console.log('Updating selected count');
+  console.log('Updating selected count and total amount');
   selectedCount = 0;
+  totalAmount = 0; // Reset total amount
+
   checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
       selectedCount++;
+      const priceElement = checkbox.closest('.cart-item').querySelector('.cart-item-price');
+      const price = parseFloat(priceElement.textContent.replace('₱', '').replace(',', '')); // Get price and convert to float
+      totalAmount += price; // Add to total amount
     }
   });
+
   console.log('Selected count:', selectedCount);
   selectedItemLabel.textContent = `Selected Item (${selectedCount})`;
+  
+  // Update total amount display
+  totalAmountLabel.textContent = `Total Amount (Item ${selectedCount}): ₱${totalAmount.toFixed(2)}`;
+  
+  // Enable or disable the checkout button based on the selected count
+  checkoutButton.disabled = selectedCount === 0; // Disable if no items are selected
 }
 
 // Add event listener to each checkbox
@@ -149,16 +168,21 @@ checkboxes.forEach((checkbox) => {
 // Add event listener to the select all checkbox
 selectAllCheckbox.addEventListener('change', () => {
   console.log('Select all checkbox changed');
-  if (selectAllCheckbox.checked) {
-    checkboxes.forEach((checkbox) => {
-      checkbox.checked = true;
-    });
-  } else {
-    checkboxes.forEach((checkbox) => {
-      checkbox.checked = false;
-    });
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = selectAllCheckbox.checked; // Set checked state based on select all
+  });
+  updateSelectedCount(); // Update the count after checking/unchecking
+});
+
+// Initial call to set the state of the checkout button and total amount
+updateSelectedCount();
+
+// Add event listener to the checkout button
+checkoutButton.addEventListener('click', (event) => {
+  if (selectedCount === 0) {
+    event.preventDefault(); // Prevent navigation if no items are selected
+     // Optional: display an alert message
   }
-  updateSelectedCount();
 });
 
 </script>
