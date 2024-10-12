@@ -66,7 +66,7 @@
     <section class="my-cart">
 
         <div class="cart">
-
+    
             <div class="cart-item">
                 <img src="/image/example.jpg" alt="Black Hoodie" class="cart-item-image">
                 <div class="cart-item-details">
@@ -76,41 +76,93 @@
                     <p class="cart-item-price">₱432</p>
                 </div>
                 <div class="cart-item-remove">
-                    <input type="checkbox" class="remove-checkbox" id="remove-item">
+                    <input type="checkbox" class="select-checkbox">
                     <input type="submit" class="delete-btn" value="Delete">
                 </div>
             </div>
-
+    
         </div>
-
+    
         <div class="checkout-container">
-
+    
             <div class="checkout">
-
+    
                 <div class="checkout-left">
     
                     <input type="checkbox" class="selectAll-checkbox" id="select-all">
-                    <label for="slect-all">Selected Item (100)</label>
+                    <label for="select-all" id="selected-item-label">Selected Item (0)</label>
     
                 </div>
     
                 <div class="checkout-right">
     
-                    <h3>Total Amount (Item 0): ₱100.00</h3>
+                    <h3>Total Amount (Item 0): ₱0.00</h3>
                     <a href="checkout.html" class="checkout-btn" style="text-decoration: none;">Check out</a>
     
                 </div>
     
             </div>
-            
+    
         </div>
-
+    
     </section>
 
 
 </body>
 
-<script src="/User/js/script.js"></script>
+<script>
+
+    // Get all checkboxes with class 'select-checkbox'
+const checkboxes = document.querySelectorAll('.select-checkbox');
+console.log('Checkboxes:', checkboxes);
+
+// Get the select all checkbox
+const selectAllCheckbox = document.querySelector('.selectAll-checkbox');
+console.log('Select all checkbox:', selectAllCheckbox);
+
+// Get the label for selected items
+const selectedItemLabel = document.querySelector('#selected-item-label');
+console.log('Selected item label:', selectedItemLabel);
+
+// Initialize the count of selected items
+let selectedCount = 0;
+
+// Function to update the selected item count
+function updateSelectedCount() {
+  console.log('Updating selected count');
+  selectedCount = 0;
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      selectedCount++;
+    }
+  });
+  console.log('Selected count:', selectedCount);
+  selectedItemLabel.textContent = `Selected Item (${selectedCount})`;
+}
+
+// Add event listener to each checkbox
+checkboxes.forEach((checkbox) => {
+  console.log('Adding event listener to checkbox');
+  checkbox.addEventListener('change', updateSelectedCount);
+});
+
+// Add event listener to the select all checkbox
+selectAllCheckbox.addEventListener('change', () => {
+  console.log('Select all checkbox changed');
+  if (selectAllCheckbox.checked) {
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = true;
+    });
+  } else {
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+  }
+  updateSelectedCount();
+});
+
+</script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
@@ -119,5 +171,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/User/js/script.js"></script>
 
 </html> 
