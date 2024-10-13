@@ -19,57 +19,74 @@
 </head>
 <body>
 
-    <div class="container" id="container">
-      <div class="form-container sign-up-container">
-        <form action="#">
-          <h1>Create Account</h1>
-          <div class="social-container">
-            <a href="#" class="social"><img src="/image/outlook.png" alt=""></i></a>
-            <a href="#" class="social"><i class='bx bxl-google' ></i></a>
-          </div>
-          <span>or use your email for registration</span>
-          <div class="user-names">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-          </div>
-          <input type="number" placeholder="Phone Number" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <input type="password" placeholder="Confirm Password" />
-          <div class="google-captcha"></div>
-          <button><a href="signup.html" style="text-decoration: none; color: white">Sign Up</a></button>
-        </form>
-      </div>
-      <div class="form-container sign-in-container">
-        <form action="#">
-          <h1>Sign in</h1>
-          <div class="social-container">
-            <a href="#" class="social"><img src="/image/outlook.png" alt=""></i></a>
-            <a href="#" class="social"><i class='bx bxl-google' ></i></a>
-          </div>
-          <span>or use your account</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <div class="google-captcha"></div>
-          <button><a href="index.html" style="text-decoration: none; color: white">Sign In</a></button>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
-            <p>To keep connected with us please login with your personal info</p>
-            <button class="ghost" id="signIn">Sign In</button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <h1>Hello, Friend!</h1>
-            <p>Enter your personal details and start journey with us</p>
-            <button class="ghost" id="signUp">Sign Up</button>
-          </div>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container" id="signUpForm">
+      <form action="#">
+        <h1>Create Account</h1>
+        <div class="social-container">
+          <a href="#" class="social"><img src="/image/outlook.png" alt=""></a>
+          <a href="#" class="social"><i class='bx bxl-google'></i></a>
+        </div>
+        <span>or use your email for registration</span>
+        <div class="user-names">
+          <input type="text" placeholder="First Name" />
+          <input type="text" placeholder="Last Name" />
+        </div>
+        <input type="number" placeholder="Phone Number" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Confirm Password" />
+        <div class="google-captcha"></div>
+        <button id="sign-up">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- New Address Form -->
+    <div class="form-container address-form-container" id="addressForm" style="display: none;">
+      <form action="#">
+        <h1>Enter Address</h1>
+        <div class="address-fields">
+          <input type="text" placeholder="Street Address" required />
+          <input type="text" placeholder="City" required />
+          <input type="text" placeholder="State/Province" required />
+          <input type="text" placeholder="Country" required />
+          <input type="text" placeholder="Postal Code" required />
+        </div>
+        <button type="submit">Submit Address</button>
+      </form>
+    </div>
+
+    <div class="form-container sign-in-container" id="signIpForm">
+      <form action="#">
+        <h1>Sign in</h1>
+        <div class="social-container">
+          <a href="#" class="social"><img src="/image/outlook.png" alt=""></a>
+          <a href="#" class="social"><i class='bx bxl-google'></i></a>
+        </div>
+        <span>or use your account</span>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <a href="#">Forgot your password?</a>
+        <div class="google-captcha"></div>
+        <button><a href="index.html" style="text-decoration: none; color: white">Sign In</a></button>
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Friend!</h1>
+          <p>Enter your personal details and start journey with us</p>
+          <button class="ghost" id="signUp">Sign Up</button>
         </div>
       </div>
     </div>
+  </div>
 
     <style>
 
@@ -304,24 +321,63 @@
         gap: 10px;
       }
 
+      .address-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .address-form-container {
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+      }
+
+      .container.right-panel-active .address-form-container {
+        transform: translateX(100%);
+        opacity: 1;
+        z-index: 5;
+        animation: show 0.6s;
+      }
+
+
     </style>
 
   </body>
 
   <script>
-
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
 
+    const signInForm = document.getElementById('signIpForm');
+    const signUpForm = document.getElementById('signUpForm');
+    const addressForm = document.getElementById('addressForm');
+    const signUpLink = document.getElementById('sign-up');
+
+    // This event listener makes the container shift for sign up
     signUpButton.addEventListener('click', () => {
       container.classList.add("right-panel-active");
     });
 
+    // This event listener makes the container shift for sign in and hides the address form
     signInButton.addEventListener('click', () => {
       container.classList.remove("right-panel-active");
+      addressForm.style.display = 'none'; // Hide the address form when "Sign In" is clicked
+      signUpForm.style.display = 'block'; // Optional: Show the sign-up form again if needed
+      signInForm.style.display = 'block';
     });
 
+    // Show address form on clicking the "Sign Up" button
+    signUpLink.addEventListener('click', (e) => {
+      e.preventDefault();  // Prevent default form submission
+
+      // Hide the sign-up form and show the address form
+      signUpForm.style.display = 'none';
+      addressForm.style.display = 'block';
+      signInForm.style.display = 'none';
+    });
   </script>
 
   <script src="/User/js/script.js"></script>
