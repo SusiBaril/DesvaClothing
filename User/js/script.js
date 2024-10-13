@@ -29,6 +29,3 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
-function goToShop() {
-    window.location.href = 'shop.html'; // Change to your shop page URL
-}

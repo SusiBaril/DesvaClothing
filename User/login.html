@@ -39,21 +39,6 @@
       </form>
     </div>
 
-    <!-- New Address Form -->
-    <div class="form-container address-form-container" id="addressForm" style="display: none;">
-      <form action="#">
-        <h1>Enter Address</h1>
-        <div class="address-fields">
-          <input type="text" placeholder="Street Address" required />
-          <input type="text" placeholder="City" required />
-          <input type="text" placeholder="State/Province" required />
-          <input type="text" placeholder="Country" required />
-          <input type="text" placeholder="Postal Code" required />
-        </div>
-        <button type="submit">Submit Address</button>
-      </form>
-    </div>
-
     <div class="form-container sign-in-container" id="signIpForm">
       <form action="#">
         <h1>Sign in</h1>
@@ -365,16 +350,6 @@
       addressForm.style.display = 'none'; // Hide the address form when "Sign In" is clicked
       signUpForm.style.display = 'block'; // Optional: Show the sign-up form again if needed
       signInForm.style.display = 'block';
-    });
-
-    // Show address form on clicking the "Sign Up" button
-    signUpLink.addEventListener('click', (e) => {
-      e.preventDefault();  // Prevent default form submission
-
-      // Hide the sign-up form and show the address form
-      signUpForm.style.display = 'none';
-      addressForm.style.display = 'block';
-      signInForm.style.display = 'none';
     });
   </script>
 
