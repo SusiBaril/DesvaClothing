@@ -32,3 +32,17 @@ navLinks.forEach(link => {
     link.classList.add('active');
   }
 });
+
+function showOrder(orderType) {
+  // Hide all order tables
+  let orderTables = document.querySelectorAll(".order-table table, .custom-orders-table table");
+  orderTables.forEach(table => {
+    table.style.display = "none";
+  });
+
+  // Show the selected regular order table
+  document.getElementById('orders-' + orderType).style.display = "table";
+
+  // Show the selected custom order table
+  document.getElementById('custom-' + orderType).style.display = "table";
+}

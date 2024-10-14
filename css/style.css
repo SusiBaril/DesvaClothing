@@ -568,3 +568,22 @@ h3 {
 .custom-orders-table tbody tr:hover {
   background-color: #e9e9e9;
 }
+
+.order-tabs{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.order-tabs h4{
+  font-size: 20px;
+}
+
+.order-tabs button{
+  background: none;
+  border-radius: 20px;
+}
+
+.order-tabs button:hover{
+  background-color: var(--bg-900);
+  color: var(--bg-bg-900);
+}

@@ -106,32 +106,118 @@
 
           <div class="row">
 
+            <div class="col-md-12">
+
+              <div class="order-tabs">
+
+                <h4>Sort By:</h4>
+
+                <button onclick="showOrder('pending-order')">Pending</button>
+                <button onclick="showOrder('on-delivered-order')">On Delivery</button>
+                <button onclick="showOrder('delivered-order')">Delivered</button>
+                <button onclick="showOrder('cancled-order')">Canceled</button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+
             <div class="col-md-6">
 
               <div class="order-table">
 
                 <h4>Orders</h4>
-    
-                <table class="table-borderless" >
-                    <thead>
-                      <tr>
-                        <th>Order Id</th>
-                        <th>Product</th>
-                        <th>Quantiy</th>
-                        <th>Total Price</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Desva Tshirt</td>
-                        <td>12</td>
-                        <td>₱1</td>
-                        <td>Pending</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                
+                <!-- Premade Pending -->
+                <table class="table-borderless" id="orders-pending-order" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th>Order Id</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Desva Tshirt</td>
+                      <td>12</td>
+                      <td>₱1</td>
+                      <td>Pending</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <!-- Premade Delivered -->
+                <table class="table-borderless" id="orders-delivered-order" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th>Order Id</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Desva Tshirt</td>
+                      <td>12</td>
+                      <td>₱1</td>
+                      <td>Complete</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <!-- Premade Cancled -->
+                <table class="table-borderless" id="orders-cancled-order" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th>Order Id</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Desva Tshirt</td>
+                      <td>12</td>
+                      <td>₱1</td>
+                      <td>Canceled</td>
+                    </tr>
+                  </tbody>
+                </table>
+        
+                <!-- Premade On Delivery -->
+                <table class="table-borderless" id="orders-on-delivered-order" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th>Order Id</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Desva Tshirt</td>
+                      <td>12</td>
+                      <td>₱1</td>
+                      <td>On Going</td>
+                    </tr>
+                  </tbody>
+                </table>
     
             </div>
 
@@ -143,26 +229,93 @@
 
                 <h4>Custom-Orders</h4>
     
-                <table class="table-borderless" >
-                    <thead>
-                      <tr>
-                        <th>Order Id</th>
-                        <th>Size</th>
-                        <th>Quantiy</th>
-                        <th>Total Price</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>S/M/L/XL</td>
-                        <td>0/0/0/0</td>
-                        <td>₱1</td>
-                        <td>1</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <!-- Pending -->
+                <table class="table-borderless" id="custom-pending-order" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th>Order Id</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Desva Tshirt</td>
+                      <td>12</td>
+                      <td>₱1</td>
+                      <td>Pending</td>
+                    </tr>
+                  </tbody>
+                </table>
+        
+                <!-- Custome Delivered -->
+                <table class="table-borderless" id="custom-delivered-order" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th>Order Id</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Desva Tshirt</td>
+                      <td>12</td>
+                      <td>₱1</td>
+                      <td>Complete</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <!-- Custom Cancled -->
+                <table class="table-borderless" id="custom-cancled-order" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th>Order Id</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Desva Tshirt</td>
+                      <td>12</td>
+                      <td>₱1</td>
+                      <td>Canceled</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <!-- Custom On Delivery -->
+                <table class="table-borderless" id="custom-on-delivered-order" style="display: none;">
+                  <thead>
+                    <tr>
+                      <th>Order Id</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Desva Tshirt</td>
+                      <td>12</td>
+                      <td>₱1</td>
+                      <td>On Going</td>
+                    </tr>
+                  </tbody>
+                </table>
 
               </div>
 
